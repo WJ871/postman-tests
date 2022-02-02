@@ -1,12 +1,47 @@
 {
 	"info": {
-		"_postman_id": "2f78fc61-d3d5-472d-8ba5-4ee5d6920955",
+		"_postman_id": "6ef37897-68c3-4152-898a-3e7ed06757d8",
 		"name": "Postman-collectie",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "First Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"check\", function() {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson.url).to.eql('http://postman-echo.com/get');\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "postman-echo.com/get",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "First Request Copy",
 			"event": [
 				{
 					"listen": "test",
