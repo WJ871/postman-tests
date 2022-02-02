@@ -12,7 +12,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"check\", function() {\r",
+							"pm.test(\"Verify status code 200\", function() {\r",
 							"    pm.response.to.have.status(200);\r",
 							"    const responseJson = pm.response.json();\r",
 							"    pm.expect(responseJson.url).to.eql('http://postman-echo.com/get');\r",
